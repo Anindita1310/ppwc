@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(){
+float x = 25.0, y=10.0;
+if(y != (x - 10.0))
+x = x - 10.0;
+else
+x = x / 2.0;
+return 0;
+
+}
+o/p:This code will change the value of x to 15.0 and y's value remains same as 10.0
