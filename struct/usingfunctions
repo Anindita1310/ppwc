@@ -1,0 +1,44 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <string.h>  // For strcpy function
+
+#define STRSIZ 10
+
+// Structure definition
+struct planet_t {
+    char name[STRSIZ];
+    double diameter;
+    int moons;
+    double orbit_time;
+    double rotation_time;
+};
+
+// Function to pass and modify a value (by value)
+void passval(int nm) {
+    printf("Original moons: %d\n", nm);   // Print the original moons value
+    nm = nm + 34;                         // Modify the value (but only locally inside the function)
+    printf("Modified moons: %d\n", nm);    // Print the modified moons value
+}
+
+int main() {
+    // Declare and initialize a planet structure
+    struct planet_t current_planet;
+    
+    // Assign values to the structure's members
+    strcpy(current_planet.name, "Jupiter");      // Set the planet name to "Jupiter"
+    current_planet.diameter = 142800;            // Set the diameter of the planet
+    current_planet.moons = 16;                   // Set the number of moons
+    current_planet.orbit_time = 11.9;            // Set the orbit time
+    current_planet.rotation_time = 9.925;        // Set the rotation time
+    
+    // Pass the value of current_planet.moons to passval function
+    passval(current_planet.moons);
+
+    return 0;
+}
