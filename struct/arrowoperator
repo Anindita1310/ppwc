@@ -1,0 +1,18 @@
+#include<stdio.h>
+struct sdata{
+int regdno;
+float mark;
+char name[80];
+};
+int main(){
+struct sdata s,*ptr;
+ptr=&s;
+scanf("%d\n",&ptr->regdno);
+scanf("%f\n",&ptr->mark);
+scanf("%s\n",&ptr->name);
+printf("%d\n",ptr->regdno);
+printf("%f\n",ptr->mark);
+printf("%s\n",ptr->name);
+
+return 0;
+}
