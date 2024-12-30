@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>  // For strcpy function
+
+#define STRSIZ 10
+
+// Structure definition
+struct planet_t {
+    char name[STRSIZ];
+    double diameter;
+    int moons;
+    double orbit_time;
+    double rotation_time;
+};
+
+void passval(int nm) {
+    printf("Original moons: %d\n", nm);   
+    nm = nm + 34;                        
+    printf("Modified moons: %d\n", nm); 
+}
+void passaddr(int *nm){
+     printf("Original moons:%d\n", *nm);
+     *nm=*nm+34;
+     printf("Modified moons%d\n", *nm);
+}
+
+
+int main() {
+    
+    struct planet_t current_planet;
+    
+   
+    strcpy(current_planet.name, "Jupiter");     
+    current_planet.diameter = 142800;          
+    current_planet.moons = 16;                  
+    current_planet.orbit_time = 11.9;          
+    current_planet.rotation_time = 9.925;      
+ 
+    passval(current_planet.moons);
+    printf("%d\n",current_planet.moons);//16
+    passaddr(&current_planet.moons);
+    printf("%d\n",current_planet.moons);//50
+    
+
+    return 0;
+}
