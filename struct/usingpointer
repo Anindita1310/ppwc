@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<string.h>
+struct sdata{
+    int regdno;
+    float marks;
+    char name[80];
+};
+int main(){
+   struct sdata s,*ptr;
+   ptr=&s;
+   ptr->regdno=23;
+   ptr->marks=34.5;
+   strcpy(ptr->name,"John Doe");
+   printf("Regd no:%d\n",ptr->regdno);
+   printf("Marks:%.2f\n",ptr->marks);
+   printf("Name :%s\n",ptr->name);
+   return 0;
+}
