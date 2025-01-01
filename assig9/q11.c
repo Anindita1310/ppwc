@@ -30,6 +30,8 @@ int main(){
         printf("Message read from buffer%s\n",buffer);
         
         close(pidfd[0]);
+
+        wait(NULL);
     }
     return 0;
 }
