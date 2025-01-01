@@ -16,4 +16,5 @@ int main(){
     ptr->or_time=23.56;
     ptr->ro_time=45.67;
     printf("%s %.2lf %d %.2lf %.2lf\n",ptr->name,ptr->diameter,ptr->moons,ptr->or_time,ptr->ro_time);
+    return 0;
 }
